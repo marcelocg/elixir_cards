@@ -7,7 +7,7 @@ defmodule Cards do
   Creates a deck of cards for a card playing game
   """
   def create_deck do
-    values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
+    values = ["Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"]
     suits  = ["Spades", "Clubs", "Hearts", "Diamonds"]
 
     # List comprehensions
@@ -32,7 +32,14 @@ defmodule Cards do
 
   @doc """
   Deals a hand of cards from a complete deck.
-  Returns {hand, remaining_deck}
+
+  ## Examples
+
+      iex> deck = Cards.create_deck
+      iex> {hand, deck} = Cards.deal(deck, 1)
+      iex> hand
+      ["Ace of Spades"]
+
   """
   def deal(deck, hand_size) do
     # Explanations on tuples and pattern matching
@@ -62,14 +69,6 @@ defmodule Cards do
 
   @doc """
   Forms a hand of a given number (`hand_size` param) of shuffled cards from the complete deck
-
-  ## Examples
-
-      iex> deck = Cards.create_deck
-      iex> {hand, deck} = Cards.create_hand(1)
-      iex> hand
-      ["Ace of Spades"]
-
   """
   def create_hand(hand_size) do
     create_deck()

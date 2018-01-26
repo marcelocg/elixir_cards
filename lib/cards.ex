@@ -61,7 +61,15 @@ defmodule Cards do
   end
 
   @doc """
-  Forms a hand of a given number of shuffled cards from the omplete deck
+  Forms a hand of a given number (`hand_size` param) of shuffled cards from the complete deck
+
+  ## Examples
+
+      iex> deck = Cards.create_deck
+      iex> {hand, deck} = Cards.create_hand(1)
+      iex> hand
+      ["Ace of Spades"]
+
   """
   def create_hand(hand_size) do
     create_deck()

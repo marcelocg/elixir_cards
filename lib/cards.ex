@@ -60,4 +60,12 @@ defmodule Cards do
     end
   end
 
+  @doc """
+  Forms a hand of a given number of shuffled cards from the omplete deck
+  """
+  def create_hand(hand_size) do
+    create_deck()
+    |> shuffle
+    |> deal(hand_size)
+  end
 end
